@@ -3,14 +3,11 @@ package com.ironhack.w3d3.model;
 import jakarta.persistence.*;
 
 @Entity
-//@Table(name = "teacher") // only necessary if the table and the class do not have the same name
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id") // only necessary if the field and the property do not have the same name
     private Integer id;
 
-//    @Column(name = "teacher") // only necessary if the field and the property do not have the same name
     private String teacher;
 
     public Teacher() {

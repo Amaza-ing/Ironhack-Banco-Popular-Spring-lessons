@@ -1,5 +1,6 @@
 package com.ironhack.w3d3.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -10,7 +11,6 @@ public class Course {
     private Integer hours;
     private String classroom;
     private String vacations;
-//    @Column(name = "teacher_id") // not necessary, camelCase is automatically translated to snake_case
     private Integer teacherId;
 
     public Course() {
