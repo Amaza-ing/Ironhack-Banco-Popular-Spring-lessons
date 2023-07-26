@@ -37,6 +37,33 @@ INSERT INTO course (course, hours, classroom, vacations, teacher_id) VALUES
 
 
 
+CREATE TABLE exam (
+	id VARCHAR(255) NOT NULL,
+	start_date DATETIME,
+	mandatory BOOL,
+	PRIMARY KEY (id)
+);
+
+
+CREATE TABLE multiple_choice_exam (
+	id VARCHAR(255) NOT NULL,
+	number_of_choices INT,
+	FOREIGN KEY (id) REFERENCES exam(id)
+);
+
+
+
+CREATE TABLE student (
+	id INT NOT NULL AUTO_INCREMENT,
+	grade INT,
+	street VARCHAR(255),
+	house_number INT,
+	telephone VARCHAR(255),
+	PRIMARY KEY (id)
+);
+
+
+
 
 
 
