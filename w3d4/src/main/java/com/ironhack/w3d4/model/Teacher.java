@@ -17,8 +17,8 @@ public class Teacher {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    //    Use only if we want a bidirectional relationship
-    //    If used, we must be careful not to create a stackOverflow Error (infinite loop)
+//    Use only if we want a bidirectional relationship
+//    If used, we must be careful not to create a stackOverflow Error (infinite loop)
 //    @OneToMany(mappedBy = "teacher")
 //    private List<Course> courses;
 
