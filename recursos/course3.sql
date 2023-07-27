@@ -2,10 +2,33 @@ DROP SCHEMA IF EXISTS course;
 CREATE SCHEMA course;
 USE course;
 
+
+
+
+
+CREATE TABLE address (
+	id INT NOT NULL AUTO_INCREMENT,
+	street VARCHAR(255),
+	house_code VARCHAR(255),
+	PRIMARY KEY (id)
+);
+
+INSERT INTO address (street, house_code) VALUES
+('Main Street', '1A'),
+('Magellan Street', '2B'),
+('Sunny Square', '3C');
+
+
+
+
+
+
 CREATE TABLE teacher (
 	id INT NOT NULL AUTO_INCREMENT,
 	teacher VARCHAR(255),
-	PRIMARY KEY (id)
+	address_id INT,
+	PRIMARY KEY (id),
+	FOREIGN KEY (address_id) REFERENCES address(id)
 );
 
 CREATE TABLE course(
@@ -18,10 +41,10 @@ CREATE TABLE course(
 	FOREIGN KEY (teacher_id) REFERENCES teacher(id)
 );
 
-INSERT INTO teacher (teacher) VALUES
-('Alberto García'),
-('Beatriz López'),
-('Carmen Martín');
+INSERT INTO teacher (teacher, address_id) VALUES
+('Alberto García', 1),
+('Beatriz López', 2),
+('Carmen Martín', 3);
 
 INSERT INTO course (course, hours, classroom, vacations, teacher_id) VALUES
 ('Math', 100, 'A1', '2 weeks', 1),
