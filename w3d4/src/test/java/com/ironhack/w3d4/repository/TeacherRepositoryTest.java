@@ -1,5 +1,6 @@
 package com.ironhack.w3d4.repository;
 
+import com.ironhack.w3d4.model.Address;
 import com.ironhack.w3d4.model.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,11 +17,25 @@ class TeacherRepositoryTest {
     @Autowired
     TeacherRepository teacherRepository;
 
+    @Autowired
+    AddressRepository addressRepository;
+
     @Test
     public void findAll_teachers_teacherList() {
+        Address address = new Address("Fake Street", "123");
+        addressRepository.save(address);
+        Teacher teacher = new Teacher("John Doe", address);
+        teacherRepository.save(teacher);
+
         List<Teacher> teacherList = teacherRepository.findAll();
-        System.out.println(teacherList);
-        assertEquals(3, teacherList.size());
+        for (Teacher teacher1 : teacherList) {
+            System.out.println(teacher1);
+        }
+        assertEquals(4, teacherList.size());
+
+        int lastTeacherIndex = teacherList.size() - 1;
+        System.out.println(teacherList.get(lastTeacherIndex).getId());
+        teacherRepository.deleteById(teacherList.get(lastTeacherIndex).getId());
     }
 
     @Test
