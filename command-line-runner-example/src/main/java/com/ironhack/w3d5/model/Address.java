@@ -1,4 +1,4 @@
-package com.ironhack.w3d4.model;
+package com.ironhack.w3d5.model;
 
 import jakarta.persistence.*;
 
