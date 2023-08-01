@@ -1,5 +1,6 @@
 package com.ironhack.w4d1.controller.impl;
 
+import com.ironhack.w4d1.controller.interfaces.ICourseController;
 import com.ironhack.w4d1.model.Course;
 import com.ironhack.w4d1.repository.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +12,14 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class CourseController {
+public class CourseController implements ICourseController {
 
     @Autowired
     CourseRepository courseRepository;
 
     @GetMapping("/courses")
     @ResponseStatus(HttpStatus.OK)
-    public List<Course> getAllcourses() {
+    public List<Course> getAllCourses() {
         return courseRepository.findAll();
     }
 
