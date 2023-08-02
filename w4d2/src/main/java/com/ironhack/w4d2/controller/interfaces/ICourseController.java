@@ -25,6 +25,11 @@ public interface ICourseController {
     void saveCourse(Course course);
 
 
+    //  ****************************************************  PUT  ****************************************************
+
+    void updateCourse(Course course, String id);
+
+
     //  ***************************************************  PATCH  ***************************************************
 
     void updateCourseHours(CourseHoursDTO courseHoursDTO, String id);
