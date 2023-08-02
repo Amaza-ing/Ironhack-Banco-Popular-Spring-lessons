@@ -3,6 +3,9 @@ package com.ironhack.w4d3.controller.interfaces;
 import com.ironhack.w4d3.controller.dto.CourseClassroomDTO;
 import com.ironhack.w4d3.controller.dto.CourseHoursDTO;
 import com.ironhack.w4d3.model.Course;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -20,6 +23,11 @@ public interface ICourseController {
     //  ***************************************************  POST  ****************************************************
 
     void saveCourse(Course course);
+
+
+    //  ****************************************************  PUT  ****************************************************
+
+    void updateCourse(Course course, String id);
 
 
     //  ***************************************************  PATCH  ***************************************************
