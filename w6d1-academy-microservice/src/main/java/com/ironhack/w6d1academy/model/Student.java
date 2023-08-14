@@ -1,15 +1,11 @@
-package com.ironhack.w6d1student.model;
+package com.ironhack.w6d1academy.model;
 
 import jakarta.persistence.*;
 
-@Entity
 public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private Integer grade;
 
-    @Embedded
     private StudentInfo studentInfo;
 
     public Student() {

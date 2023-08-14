@@ -1,8 +1,7 @@
-package com.ironhack.w6d1student.model;
+package com.ironhack.w6d1academy.model;
 
 import jakarta.persistence.Embeddable;
 
-@Embeddable
 public class StudentInfo {
     private String street;
     private Integer houseNumber;
